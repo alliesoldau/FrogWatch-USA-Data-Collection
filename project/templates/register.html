@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+
+
+{% block title %}
+    Reigster
+{% endblock %}
+
+{% block main %}
+
+<style>
+    body {
+        /* I took this image */
+        background-image: url('static/adkpond.jpg');
+        background-size: cover;
+    }
+</style>
+    <center><div class="box">
+        <form action="/register" method="post">
+            <div class="mb-3">
+                <h3>Member Account Registration</h3>
+                <span class="register">MemberID must be 5 numerals long</span><br>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="memberID" name="memberID" placeholder="Member ID" type="text">
+            </div>
+            <div class="mb-3">
+                <span class="register">Password must be at least 5 values long</span><br>
+                <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="password" name="confirmation" placeholder="Confirm Password" type="password">
+            </div>
+            <center><button class="btn btn-primary" type="submit">Register</button></center>
+        </form>
+    </div></center>
+{% endblock %}

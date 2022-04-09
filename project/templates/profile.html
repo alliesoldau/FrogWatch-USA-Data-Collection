@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+
+<head>
+  <title>Profile</title>
+</head>
+
+<body>
+<!-- Format the title -->
+<style>
+  h1 {
+    font-family: 'Optima', sans-serif;
+    font-size: 45px;
+  }
+</style>
+        <!-- Loop through database to pull user's profile info to input into table -->
+        <div>
+          {% for row in namedata %}
+        <!-- Adding in the styling here to keep styles.css clean -->
+        <h1 align="left"><i>Hey </i><span style="color:#F59449;"><b>{{ row["firstname"] }}!</span></h1>
+        <!-- Create containers so that we have the table and the image, and they adjust depending on mobile or desktop -->
+              <!-- Add in margin below the title text by formatting table top margin-->
+              <table style="margin-top: 30px;">
+                <h2 align="left">Member Profile</h2>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row"><i>Name</th>
+                      <td>{{ row["firstname"] }} {{ row["lastname"] }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><i>Home Chapter</th>
+                      <td>{{ row["homechapter"] }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><i>Email</th>
+                      <td>{{ row["email"] }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+                {% endfor %}
+          <!-- Button which takes you to update member info page -->
+          <a href=/updateprofile>
+            <button type="button" class="btn btn-outline-success" style="float: left;">Edit Member Info</button>
+          </a>
+
+
+    </body>
+{% endblock %}

@@ -1,0 +1,232 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Watch Log
+{% endblock %}
+
+{% block main %}
+    <!-- Required log information taken from the Association of Zoos and Aquariums FrogWatchUSA official paper data sheet -->
+    <div class="row">
+        <div class="column">
+            <form action="/logwatches" method="post">
+                <h3 align="left"><i>Watch Log</i></h3>
+                <div>
+                    <h5 align="left">Site ID</h5>
+                    <input type="integer" id="siteID" name="siteID" placeholder="Your site ID...">
+
+                    <h5 align="left">Date of Log</h5>
+                    <input type="date" id="dateoflog" name="dateoflog" placeholder="Date of log...">
+
+                    <h5 align="left">Start Time</h5>
+                    <input type="datetime" id="starttime" name="starttime" placeholder="Start time...">
+
+                    <h5 align="left">End Time</h5>
+                    <input type="datetime" id="endtime" name="endtime" placeholder="End time...">
+
+                    <!-- FIX FORMATTING FOR THE RADIO BUTTONS MAKE THEM NOT SAME AS OTHER LABELS -->
+                    <h5 align="left">Wind Speed</h5>
+                    <div class="radio-label-vertical-wrapper">
+                        <div class="form-group">
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="windspeed" value="0">0</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="windspeed" value="1">1</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="windspeed" value="2">2</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="windspeed" value="3">3</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="windspeed" value="4">4</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="windspeed" value="5">5</label>
+                        </div>
+                    </div>
+
+                    <h5 align="left">Precipitation at Time of Watch</h5>
+                    <select id="precipitation" name="precipitation">
+                        <option value="" disabled selected hidden>Select One...</option>
+                        <option>None</option>
+                        <option>Fog/Mist</option>
+                        <option>Light Rain/Drizzle</option>
+                        <option>Medium Rain</option>
+                        <option>Hard Rain</option>
+                        <option>Hail</option>
+                        <option>Snow</option>
+                    </select>
+
+                    <h5 align="left">Precipitation in the Past 48 Hours</h5>
+                    <select id="precipitationpast48" name="precipitationpast48">
+                        <option value="" disabled selected hidden>Select One...</option>
+                        <option>None</option>
+                        <option>Some Precipitation</option>
+                        <option>Much Precipitation</option>
+                    </select>
+
+                    <h5 align="left">Temperature at Time of Watch</h5>
+                    <select id="temp" name="temp">
+                        <option value="" disabled selected hidden>Select One...</option>
+                        <option>Above Freezing</option>
+                        <option>Below Freezing</option>
+                    </select>
+
+                    <h5 align="left">Frog & Toad Calling Intensity</h5>
+
+                    <p align="left">American Toad</p>
+                    <div class="radio-label-vertical-wrapper">
+                        <div class="form-group">
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="americantoad" value="0">0</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="americantoad" value="1">1</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="americantoad" value="2">2</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="americantoad" value="3">3</label>
+                        </div>
+                    </div><br>
+                    <p align="left">Spring Peeper</p>
+                    <div class="radio-label-vertical-wrapper">
+                        <div class="form-group">
+                            <label class="radio-label-vertical">
+                            <input type="radio" name="springpeeper" value="0">0</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="springpeeper" value="1">1</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="springpeeper" value="2">2</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="springpeeper" value="3">3</label>
+                        </div>
+                        </div><br>
+                        <p align="left">Gray Tree Frog</p>
+                        <div class="radio-label-vertical-wrapper">
+                            <div class="form-group">
+                                <label class="radio-label-vertical">
+                                <input type="radio" name="graytreefrog" value="0">0</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="graytreefrog" value="1">1</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="graytreefrog" value="2">2</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="graytreefrog" value="3">3</label>
+                            </div>
+                        </div><br>
+                        <p align="left">Bullfrog</p>
+                        <div class="radio-label-vertical-wrapper">
+                            <div class="form-group">
+                                <label class="radio-label-vertical">
+                                <input type="radio" name="bullfrog" value="0">0</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="bullfrog" value="1">1</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="bullfrog" value="2">2</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="bullfrog" value="3">3</label>
+                            </div>
+                        </div><br>
+                        <p align="left">Green Frog</p>
+                        <div class="radio-label-vertical-wrapper">
+                            <div class="form-group">
+                                <label class="radio-label-vertical">
+                                <input type="radio" name="greenfrog" value="0">0</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="greenfrog" value="1">1</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="greenfrog" value="2">2</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="greenfrog" value="3">3</label>
+                            </div>
+                        </div><br>
+                        <p align="left">Northern Leopard</p>
+                        <div class="radio-label-vertical-wrapper">
+                            <div class="form-group">
+                                <label class="radio-label-vertical">
+                                <input type="radio" name="northernleopardfrog" value="0">0</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="northernleopardfrog" value="1">1</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="northernleopardfrog" value="2">2</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="northernleopardfrog" value="3">3</label>
+                            </div>
+                        </div><br>
+                        <p align="left">Pickerel Frog</p>
+                        <div class="radio-label-vertical-wrapper">
+                            <div class="form-group">
+                                <label class="radio-label-vertical">
+                                <input type="radio" name="pickerelfrog" value="0">0</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="pickerelfrog" value="1">1</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="pickerelfrog" value="2">2</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="pickerelfrog" value="3">3</label>
+                            </div>
+                        </div><br>
+                        <p align="left">Wood Frog</p>
+                        <div class="radio-label-vertical-wrapper">
+                            <div class="form-group">
+                                <label class="radio-label-vertical">
+                                <input type="radio" name="woodfrog" value="0">0</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="woodfrog" value="1">1</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="woodfrog" value="2">2</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="woodfrog" value="3">3</label>
+                            </div>
+                        </div><br>
+                        <p align="left">Fowler's Toad</p>
+                        <div class="radio-label-vertical-wrapper">
+                            <div class="form-group">
+                                <label class="radio-label-vertical">
+                                <input type="radio" name="fowlerstoad" value="0">0</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="fowlerstoad" value="1">1</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="fowlerstoad" value="2">2</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="fowlerstoad" value="3">3</label>
+                            </div>
+                        </div><br>
+                        <p align="left">Eastern Spade Foot</p>
+                        <div class="radio-label-vertical-wrapper">
+                            <div class="form-group">
+                                <label class="radio-label-vertical">
+                                <input type="radio" name="easternspadefoot" value="0">0</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="easternspadefoot" value="1">1</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="easternspadefoot" value="2">2</label>
+                            <label class="radio-label-vertical">
+                                <input type="radio" name="easternspadefoot" value="3">3</label>
+                            </div>
+                        </div><br>
+
+                    <input type="submit" value="Submit">
+                </form>
+                </div>
+            </form>
+        </div>
+        <div class="column"><br><br><br><br><br><br><br><br><br><br><br><br>
+            <p class="double">
+                    <b><u>Beaufort Wind Scale</u></b><br><br>
+                    <b>0 = Calm:</b><i> smoke rises vertically.</i><br>
+                    <b>1 = Light Air:</b><i> rising smoke drifts; weather vane inactive.</i><br>
+                    <b>2 = Light Breeze:</b><i> leaves rustle; can feel wind on face.</i><br>
+                    <b>3 = Gentle Breeze:</b><i> leaves and twigs in constant motion; small flags extend.</i><br><br>
+                    <i>Too windy for monitoring</i><br>
+                    <b>4 = Moderate Breeze:</b><i> moves small branches; raises dust and loose paper.</i><br>
+                    <b>5 = Fresh Breeze:</b><i> small trees in leaf begin to sway.</i><br>
+            </p>
+            <p class="double">
+                <b><u>Calling Intensity Index</u></b><br><br>
+                <b>0:</b><i> no frogds or toads heard</i><br>
+                <b>1:</b><i> individuals could be counter; there was space between calls</i><br>
+                <b>2:</b><i> calls of individuals could be distinguised, some overlapping of calls</i><br>
+                <b>3:</b><i> full chorus, calls were contant, continuous, and overlapping</i><br><br>
+            </p>
+        </div>
+    </div>
+
+
+{% endblock %}

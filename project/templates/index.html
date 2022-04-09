@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+<!-- Format the title -->
+<style>
+  h1 {
+    font-family: 'Optima', sans-serif;
+    font-size: 30px;
+  }
+</style>
+
+        <!-- Adding in the styling here to keep styles.css clean -->
+        <h1 align="left">Survery site and watch log history</h1>
+        <span class="mobiletext"><i>Please visit the web browser version of the site to view your logged sites and watches.</span></i>
+        <!-- Create containers so that we have the table and the image, and they adjust depending on mobile or desktop -->
+        <div class="container-fluid h-90">
+          <div class="row">
+            <div class="col-md-auto">
+              <!-- Add in margin below the title text by formatting table top margin-->
+              <table>
+                <h4 align="left">Your watch logs</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Site ID</th>
+                        <th style="width:7%">Date of Log</th>
+                        <th>Wind Speed</th>
+                        <th style="width:9%">Precipitation</th>
+                        <th style="width:11%">Precipitation Past 48</th>
+                        <th style="width:9%">Temp</th>
+                        <th>American Toad</th>
+                        <th>Spring Peeper</th>
+                        <th>Gray Treefrog</th>
+                        <th>Bullfrog</th>
+                        <th>Green Frog</th>
+                        <th>Northern Leopard Frog</th>
+                        <th>Pickerel Frog</th>
+                        <th>Wood Frog</th>
+                        <th>Fowler's Toad</th>
+                        <th>Eastern Spade Foot</th>
+                    </tr>
+                <!-- Loop through database to pull user's profile info to input into table -->
+                {% for row in watchlog %}
+                    <tr>
+                        <td>{{ row["siteID"] }}</td>
+                        <td>{{ row["dateoflog"] }}</td>
+                        <td>{{ row["windspeed"] }}</td>
+                        <td>{{ row["precipitation"] }}</td>
+                        <td>{{ row["precipitationpast48"] }}</td>
+                        <td>{{ row["temp"] }}</td>
+                        <td>{{ row["americantoad"] }}</td>
+                        <td>{{ row["springpeeper"] }}</td>
+                        <td>{{ row["graytreefrog"] }}</td>
+                        <td>{{ row["bullfrog"] }}</td>
+                        <td>{{ row["greenfrog"] }}</td>
+                        <td>{{ row["northernleopardfrog"] }}</td>
+                        <td>{{ row["pickerelfrog"] }}</td>
+                        <td>{{ row["woodfrog"] }}</td>
+                        <td>{{ row["fowlerstoad"] }}</td>
+                        <td>{{ row["easternspadefoot"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+          </div>
+        </div>
+
+        <!-- Create containers so that we have the table and the image, and they adjust depending on mobile or desktop -->
+          <br><br><div class="row">
+            <div class="col-md-auto">
+              <!-- Add in margin below the title text by formatting table top margin-->
+              <table>
+                <h4 align="left">Your registered survey sites</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Site ID</th>
+                        <th>Site Name</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Site Zip</th>
+                        <th>Site Characterization</th>
+                        <th>Site Habitat</th>
+                        <th>Water Presence</th>
+                        <th>Wetland Origin</th>
+                        <th>Water Source</th>
+                    </tr>
+                <!-- Loop through database to pull user's profile info to input into table -->
+                {% for row in surveydata %}
+                    <tr>
+                        <td>{{ row["id"] }}</td>
+                        <td>{{ row["sitename"] }}</td>
+                        <td>{{ row["latitude"] }}</td>
+                        <td>{{ row["longitude"] }}</td>
+                        <td>{{ row["sitezip"] }}</td>
+                        <td>{{ row["sitecharacterization"] }}</td>
+                        <td>{{ row["sitehabitat"] }}</td>
+                        <td>{{ row["waterpresence"] }}</td>
+                        <td>{{ row["wetlandorigin"] }}</td>
+                        <td>{{ row["watersource"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+          </div>
+{% endblock %}

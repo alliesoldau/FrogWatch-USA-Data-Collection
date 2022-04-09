@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Update Profile
+{% endblock %}
+
+{% block main %}
+    <form action="/updateprofile" method="post">
+        <h3 align="left"><i>Update member information</i></h5>
+        <div>
+            <h5 for="firstname">First Name</h5>
+            <input type="text" id="firstnamename" name="firstname" placeholder="Your first name..">
+
+            <h5 for="lastname">Last Name</h5>
+            <input type="text" id="lastname" name="lastname" placeholder="Your last name..">
+
+            <h5 for="email">Email</h4>
+            <input type="varchar" id="email" name="email" placeholder="Your email..">
+
+            <h5 for="homechapter">Home Chapter</h5>
+            <select id="homechapter" name="homechapter">
+                <option value="" disabled selected hidden>Your Chapter...</option>
+                <option>Albany, NY</option>
+                <option>Boston, MA</option>
+                <option>Phoenix, AZ</option>
+                <option>Ashland, OR</option>
+                <option>Driggs, ID</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+        </div>
+    </form>
+{% endblock %}

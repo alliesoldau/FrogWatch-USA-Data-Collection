@@ -1,0 +1,370 @@
+/* Navigation bar */
+.navbar a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 17px;
+    color: #fff;
+    font-family: 'Tahoma', sans-serif;
+   }
+
+/* Change text color upon hover */
+.navbar a:hover {
+    color: #F59449;
+  }
+
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
+    font-family: 'Tahoma', sans-serif;
+
+}
+nav .navbar-brand .tan {
+    font-size: large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .green {
+    color: #92A35A;
+}
+nav .navbar-brand .white {
+    color: #fff;
+}
+nav .navbar-brand .tan {
+    color: #CBB885;
+}
+
+/* Input types */
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+input[type=varchar], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+input[type=integer], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+input[type=datetime], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+input[type=submit] {
+    width: 100%;
+    background-color: #FB5F44;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+input[type=submit]:hover {
+    background-color: #BD5863;
+    }
+
+/* Radio button formatting */
+.radio-label-vertical-wrapper {
+    padding-bottom: 13px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    }
+
+.radio-label-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 20px;
+    text-align: center;
+    }
+
+.radio-label-vertical input {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    margin-left: -6px;
+    display: block;
+    cursor: pointer;
+    }
+
+h4 {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    font-family: 'Tahoma', sans-serif;
+    color: #47592B;
+    font-weight: bold;
+    font-size: medium;
+    }
+
+h3 {
+    margin-bottom: 30px;
+    }
+
+label {
+    text-align: left;
+    font-family: 'Tahoma', sans-serif;
+    color: #47592B;
+    font-size: medium;
+    }
+
+p {
+    text-align: left;
+    font-family: 'Tahoma', sans-serif;
+    font-size: medium;
+    display: inline-block;
+    color: #47592B;
+    font-weight: bold;
+    width: 180px;
+    }
+
+p.double {
+    outline-style: double;
+    width: 100%;
+    color: #000000;
+    background-color: #92A35A;
+    padding: 15px;
+    margin-block-start: 7em;
+    margin-block-end: 7em;
+    font-weight: normal;
+    }
+
+.column {
+    width: 50%;
+    }
+
+.mb-3 {
+    width: 100%;
+    text-align: center;
+    }
+
+.customIndent {
+    margin-left: 5px;
+    }
+
+html,body {
+    height: 100%;
+    }
+
+.indexpageleft {
+    left:0;
+    background-color:#fff;
+    color: #000000;
+    position:relative;
+    width: 60%;
+    padding: 15px;
+    border: 1px solid #fff;
+    height: 100%;
+    }
+
+.indexpageright {
+    right:0;
+    /* This is an image I took and it's my hands */
+    background-image: url('froghands.jpg');
+    opacity: 0.9;
+    color: #fff;
+    position:absolute;
+    top:77px;
+    bottom:0;
+    width:40%;
+    height:100%;
+    background-size:cover;
+    padding: 15px;
+    border: 1px solid #fff;
+    }
+
+/* Hide image on mobile */
+@media screen and (max-width: 600px) {
+    .indexpageright {
+        display: none;
+        }
+    }
+
+/* Increase text width on mobile */
+@media screen and (max-width: 600px) {
+    .indexpageleft {
+        background-color: #fff;
+        color: #000000;
+        width: 100%;
+        }
+    }
+
+a {
+    color: #47592B;
+}
+
+.table.table-striped th {
+    background-color: #c4f5e0;
+    text-align: center;
+    font-family: 'Tahoma', sans-serif;
+    font-size: small;
+    }
+
+
+.table.table-striped th, table.table-striped td, table.table-striped tr {
+    text-align: center;
+    font-family: 'Tahoma', sans-serif;
+    font-size: small;
+    }
+
+
+.register {
+    color: #47592B;
+    font-weight: bold;
+    font-family: 'Tahoma', sans-serif;
+}
+
+.box{
+    width: 30%;
+    padding: 15px;
+    background:#fff;
+    border:2px solid #617040;
+    border-radius: 25px;
+    opacity: 0.8;
+    }
+
+/* Make text full screen  on mobile */
+@media screen and (max-width: 600px) {
+    .box {
+        width: 100%;
+        }
+}
+
+.boxgiant{
+    width: 30%;
+    padding: 15px;
+    background:#fff;
+    border:2px solid #617040;
+    border-radius: 25px;
+    opacity: 0.9;
+    }
+
+/* Make text full screen  on mobile */
+@media screen and (max-width: 600px) {
+    .boxgiant {
+        width: 100%;
+        }
+}
+
+.textprotocols {
+    left:0;
+    background-color:#fff;
+    color: #000000;
+    position:relative;
+    bottom:0;
+    width:60%;
+    background-size:cover;
+    padding: 15px;
+    border: 1px solid #fff;
+    }
+
+.imageprotocols {
+    right:0;
+    /* This is an image I took and it's my hands */
+    background-image: url('meobserving.jpg');
+    opacity: 0.85;
+    color: #fff;
+    position:absolute;
+    top:77px;
+    bottom:0;
+    width:40%;
+    background-size:cover;
+    padding: 15px;
+    border: 1px solid #fff;
+    }
+
+/* Make text full screen  on mobile */
+@media screen and (max-width: 600px) {
+.textprotocols {
+        width: 100%;
+        }
+    }
+/* Make image go away on mobile */
+@media screen and (max-width: 600px) {
+.imageprotocols {
+    display: none;
+    }
+}
+
+/* Hide tables on mobile */
+@media screen and (max-width: 600px) {
+    .table.table-striped {
+        display: none;
+        }
+    }
+
+/* Hide tables on mobile */
+@media screen and (max-width: 600px) {
+    .surveytable {
+        display: none;
+        }
+    }
+
+/* Show only on mobile */
+@media screen and (max-width: 600px) {
+    .mobiletext {
+        display: show;
+        }
+    }
+
+/* Show only on mobile */
+@media screen and (min-width: 601px) {
+    .mobiletext {
+        display: none;
+        }
+    }
+
+
+
+/* Hide table titles on mobile */
+@media screen and (max-width: 600px) {
+    h4 {
+        display: none;
+        }
+    }
+
+/* Make site reg form width 100% on mobile */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        }
+    }

@@ -1,0 +1,129 @@
+<!-- OUTPUT THE SITE ID SOMEHOW SO THE USER KNOWS WHAT IT IS -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Watch Log
+{% endblock %}
+
+{% block main %}
+    <!-- Required log information taken from the Association of Zoos and Aquariums FrogWatchUSA official paper data sheet -->
+    <div class="row">
+        <div class="column">
+            <form>
+                Latitude: <input id="demo" type="text" name="Latitude" /> <br />
+                Longitude: <input id="demo2" type="text" name="Longitude" />
+                </form>
+
+
+
+                <span>If you want the latitude and longitude of your current location click this button to get
+                    the values. Be sure to copy and paste the values into the lat/long fields below before submitting your form.</span><br><br>
+
+                <button onclick="getLocation()">Get Location</button>
+
+                <script>
+
+                var x=document.getElementById("demo");
+                var y=document.getElementById("demo2");
+                function getLocation()
+                  {
+                  if (navigator.geolocation)
+                    {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                    }
+                  else{x.innerHTML="Geolocation is not supported by this browser.";}
+                  }
+                function showPosition(position)
+                  {
+                  x.value=position.coords.latitude;
+                  y.value=position.coords.longitude;
+                  }
+                </script>
+
+            <form action="/surverysitereg" method="post">
+                <br><h3 align="left"><i>Survey Site Registration</i></h3>
+                <div>
+                    <h5 align="left">Site Name</h5>
+                    <input type="text" id="sitename" name="sitename" placeholder="Name your site...">
+
+                    <h5 align="left">Site Zip</h5>
+                    <input type="integer" id="sitezip" name="sitezip" placeholder="What is the zip code of your site?...">
+
+                    <h5 align="left">Site Latitude</h5>
+                    <input type="varchar" id="latitude" name="latitude" placeholder="x.xxx...">
+
+                    <h5 align="left">Site Longitude</h5>
+                    <input type="varchar" id="longitude" name="longitude" placeholder="x.xxx...">
+
+                    <h5 align="left">Member Address</h5>
+                    <input type="varchar" id="address" name="address" placeholder="What is your street address?...">
+
+                    <h5 align="left">Member Zip Code</h5>
+                    <input type="integer" id="zipcode" name="zipcode" placeholder="What is your zip code?...">
+
+                    <h5 align="left">Characterize your site</h5>
+                    <div class="radio-label-vertical-wrapper">
+                        <div class="form-group">
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="sitecharacterization" value="Suburban">Suburban</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="sitecharacterization" value="Urban">Urban</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="sitecharacterization" value="Rural">Rural</label>
+                        <label class="radio-label-vertical">
+                            <input type="radio" name="sitecharacterization" value="Other">Other</label>
+                        </div>
+                    </div>
+
+                    <h5 align="left">Site Habitat</h5>
+                    <select id="sitehabitat" name="sitehabitat">
+                        <option value="" disabled selected hidden>Select One...</option>
+                        <option>Swamp or woodland swamp</option>
+                        <option>Bog or fen</option>
+                        <option>Vernal Pond</option>
+                        <option>Wet meadow</option>
+                        <option>Pond</option>
+                        <option>Prairie pothole</option>
+                        <option>Ditch</option>
+                        <option>Other</option>
+                    </select>
+
+                    <h5 align="left">Wetland Origin</h5>
+                    <select id="wetlandorigin" name="wetlandorigin">
+                        <option value="" disabled selected hidden>Select One...</option>
+                        <option>Natural</option>
+                        <option>Formed by beaver dam</option>
+                        <option>Human-made</option>
+                        <option>Unknown</option>
+                    </select>
+
+                    <h5 align="left">Water Source</h5>
+                    <select id="watersource" name="watersource">
+                        <option value="" disabled selected hidden>Select One...</option>
+                        <option>Pond</option>
+                        <option>Lake</option>
+                        <option>Stream or river</option>
+                        <option>Precipitation or runoff</option>
+                        <option>Groundwater</option>
+                        <option>Unknown</option>
+                    </select>
+
+                    <h5 align="left">Water Presence</h5>
+                    <select id="waterpresence" name="waterpresence">
+                        <option value="" disabled selected hidden>Select One...</option>
+                        <option>Permanent</option>
+                        <option>Temporary some years</option>
+                        <option>Temporary every year</option>
+                        <option>Unknown</option>
+                    </select>
+
+                    <input type="submit" value="Submit">
+                </form>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
