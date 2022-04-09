@@ -7,7 +7,10 @@ Currently, volunteers register their survey sites and their watch logs on printe
 
 On this website users can register with their member IDs (which are given out after completion of training), and then register their survey sites and watch logs. FrogWatch USA requests very specific information for survey sites and watch logs. I used JavaScript to make it easier to gather the piece of information that many volunteers neglect to provide for their survey sites - their lat/long GPS coordinates - by implementing a geo-location finding feature. This is particularly handy when a volunteer is on site, as they can just click the button to find out their coordinates. The data that volunteers provide is instantly populated into the database. There are fail-safes on the site which ensure proper data collection, like prohibiting forms from being submitted with empty fields, etc. Additionally, the site is fully mobile friendly, making it so folks can simply do all of their registration and watch logs in the field. The hope is that this reduces wasted time and encourages volunteers to spend more time in the field, and less time filing paperwork.
 
-If I had more time and resources I would want to improve the site by adding in a couple more fail safes for data collection, translating it onto a standard web page (so anyone can use it), and creating a data analyst version of the site so that the organization can manipulate the data on the site itself instead of downloading a .csv from the SQL database.
+FUTURE IMPROVEMENTS:
+- Improve the site by adding in a couple more fail safes for data collection (eg: ensuring the user inputs profile info before trying to submit a log, as the profile info is needed to input the SQL data into the database).
+- Translate this onto a standard web page (so anyone can use it).
+- Create a data analyst version of the site so that the organization can manipulate the data on the site itself instead of downloading a .csv from the SQL database.
 
 Thanks to FrogWatch USA for the helpful training and information which informed this website.
 
