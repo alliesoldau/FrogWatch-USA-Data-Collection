@@ -1,5 +1,7 @@
 # FrogWatch USA Data Collection
 
+# Video run-through: https://www.youtube.com/watch?v=w2pvLD0pS7w&ab_channel=Allie
+
 #### Description:
 FrogWatch USA is an organization that uses Community Conservation initiatives to gain information about specific fragile ecosystems. (You can learn more about this specific organization here: <https://www.aza.org/frogwatch?locale=en>. Volunteers are trained in the calls of frogs in their specific chapter area, and then go out to a registered survey site at dusk to listen to the frog calls. They then record which frogs they hear, the calling intensity, weather conditions, etc., and submit this information to the organization. FrogWatch USA uses frogs as a metric for environmental health because amphibians are sensative creatures and their presence is a good indicuator of the health of the envioronment. Additionally, frogs have distinct and loud calls, making them easy to track. To lay out an example, I am a part of the FrogWatch chapter in Albany, NY, and my registered survey sites are in the Albany Pine Bush and John Thatcher Park. I go to these locations and, using my training, listen to the calls that I hear to then provide that information to FrogWatch USA. This information helps them track trends in these areas. For example, if we stop hearing calls from the Eastern Spadefoot Frog, we know that there are not enough shallow wetland locations in that ecosystem for that frog to be present, which can help conservationists know where to focus their conservation efforts.
 
