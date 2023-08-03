@@ -8,7 +8,7 @@ Python, SQL, HTML, CSS
 <i>location tracking, styling changes for desktrop vs. mobile</i>
 
 ## 📝 Project Summary
-FrogWatch USA is an organization that uses Community Conservation initiatives to gain information about specific fragile ecosystems. (You can learn more about this specific organization here: <https://www.aza.org/frogwatch?locale=en>.) Volunteers record which frogs they hear in their designated survey site along with other enviornmental data and submit this information to the organization. 
+FrogWatch USA is an organization that uses Community Conservation initiatives to gain information about specific fragile ecosystems. (You can learn more about this specific organization here: [FrogWatchUSA](<https://www.aza.org/frogwatch?locale=en>). Volunteers record which frogs they hear in their designated survey site along with other enviornmental data and submit this information to the organization. 
 
 Historically this data is collected by snail mail making it an inefficient and cumbersome process. This site works to automate the process to save time for the volunteer and the organization.
 
